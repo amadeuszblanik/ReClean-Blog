@@ -1,0 +1,12 @@
+.Footer {
+  display: block;
+  @include meWidthMax(100%);
+  @include mePY(inRem(32));
+  background-color: meColor(main);
+  text-align: center;
+  p {
+    @include meReset;
+    margin-bottom: inRem(4);
+    font-family: msTypeface(title);
+  }
+}

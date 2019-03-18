@@ -1,0 +1,24 @@
+.PostGrid {
+  display: grid;
+  @include meGridInit;
+  margin-bottom: inRem(80);
+  .PostLink {
+    overflow: hidden;
+    grid-column: span 4;
+    @include meBreakpoint(md, xl) {
+      grid-column: span 4;
+      &:nth-child(3n - 2) {
+        grid-column: span 8;
+      }
+    }
+    @include meBreakpoint(xl) {
+      grid-column: span 4;
+      &:nth-child(9n - 8) {
+        grid-column: span 12;
+      }
+      &:nth-child(9n - 4), &:nth-child(9n - 3) {
+        grid-column: span 6;
+      }
+    }
+  }
+}

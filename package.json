@@ -1,0 +1,32 @@
+{
+  "name": "nextjs-starter",
+  "version": "1.0.0",
+  "scripts": {
+    "next": "next -p 3000",
+    "dev": "NODE_ENV=development node server.js",
+    "build": "next build",
+    "gcp-build": "next build",
+    "heroku-postbuild": "npm run build",
+    "start": "NODE_ENV=production node server.js"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.15",
+    "@fortawesome/free-brands-svg-icons": "^5.7.2",
+    "@fortawesome/free-solid-svg-icons": "^5.7.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "@zeit/next-sass": "^1.0.1",
+    "cacheable-response": "^1.1.0",
+    "classnames": "^2.2.6",
+    "express": "^4.14.0",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^8.0.3",
+    "node-sass": "^4.11.0",
+    "normalize-scss": "^7.0.1",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-facebook-sdk": "^1.1.1",
+    "svg-react-loader": "^0.4.6",
+    "wpapi": "^1.2.1"
+  },
+  "license": "MIT"
+}
