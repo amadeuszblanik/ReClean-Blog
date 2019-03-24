@@ -18,11 +18,11 @@ export class NavBlock extends Component {
           <Link href={{
             pathname: "/category/",
             query: {
-              slug: dataEntry.slug ? dataEntry.slug : ''
+              catId: dataEntry.id ? dataEntry.id : ''
             }
           }}
           as={{
-            pathname: "/category/" + dataEntry.slug ? dataEntry.slug : ''
+            pathname: "/category/" + dataEntry.id,
           }}>
             <a className={styles.NavLink}>
               {dataEntry.name ? dataEntry.name : ''}

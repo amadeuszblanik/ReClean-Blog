@@ -28,18 +28,18 @@ class Search extends React.Component {
                     <h4 className={styles.Motto}>{this.props.query}</h4>
                 </section>
                 <section className={styles.PostGrid}>
-                    {typeof posts !== 'undefined' && posts.map(post => (
-                        typeof post !== 'undefined' &&
+                    {typeof posts !== "undefined" && posts.map(post => (
+                        typeof post !== "undefined" &&
                         <PostLink
                             key={post.id}
                             link={{
-                                pathname: '/post/',
+                                pathname: "/post/",
                                 query: {
                                     slug: post.slug
                                 }
                             }}
                             linkAs={{
-                                pathname: '/post/' + post.slug,
+                                pathname: "/post/" + post.slug,
 
                             }}
                             img={typeof post._embedded["wp:featuredmedia"] !== "undefined" ? post._embedded['wp:featuredmedia'][0].source_url : false}

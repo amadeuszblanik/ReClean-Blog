@@ -28,7 +28,7 @@ app.prepare().then(() => {
     //return ssrCache({ req, res, pagePath, queryParams })
   })
 
-  server.get('/category/:slug', (req, res) => {
+  server.get('/category/:catId', (req, res) => {
     //const queryParams = { slug: req.params.slug }
     //const pagePath = '/post'
     app.render(req, res, '/category', req.params)
