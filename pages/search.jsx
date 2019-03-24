@@ -19,16 +19,16 @@ class Search extends React.Component {
     }
 
     render() {
-        const {posts} = this.props;
+        const {posts, mainMenu} = this.props;
 
         return (
-            <Layout>
+            <Layout mainMenu={mainMenu}>
                 <section className={styles.WelcomeBlock}>
                     <h2 className={styles.Title}>Search results for…</h2>
                     <h4 className={styles.Motto}>{this.props.query}</h4>
                 </section>
                 <section className={styles.PostGrid}>
-                    {posts.map(post => (
+                    {typeof posts !== 'undefined' && posts.map(post => (
                         typeof post !== 'undefined' &&
                         <PostLink
                             key={post.id}
