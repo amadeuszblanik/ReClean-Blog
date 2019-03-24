@@ -15,10 +15,17 @@ class Category extends React.Component {
 
     static async getInitialProps({query: {slug}}) {
         const catId = await api.categories().slug(slug).then(function (cat) {
-            return cat[0].id;
+            if (typeof cat === 'object') {
+                if (typeof cat[0] === 'object') {
+                    return cat[0].id;
+                }
+            } else {
+                return 0;
+            }
         });
+        console.log({catId});
         const posts = await api.posts().categories(catId).embed()
-        return {posts}
+        return {slug, posts}
     }
 
     render() {
@@ -28,7 +35,7 @@ class Category extends React.Component {
             <Layout mainMenu={mainMenu}>
                 <section className={styles.WelcomeBlock}>
                     <h2 className={styles.Title}>Posts in category…</h2>
-                    <h4 className={styles.Motto}>{this.props.query}</h4>
+                    <h4 className={styles.Motto}>{this.props.slug}</h4>
                 </section>
                 <section className={styles.PostGrid}>
                     {posts.map(post => (
@@ -55,11 +62,6 @@ class Category extends React.Component {
                         />
                     ))}
                 </section>
-                <ul className={styles.Sample}>
-                    {/* Link href='/blog?id=last' as='/blog/last'>
-              <a>My last blog post</a>
-            </Link> */}
-                </ul>
             </Layout>
         )
     }

@@ -11,7 +11,6 @@ export class NavBlock extends Component {
 
   render() {
     const { menu } = this.props;
-    console.log({menu});
     return(
       <nav className={styles.NavBlock}>
         <div className={styles.Scroll}>
@@ -19,14 +18,14 @@ export class NavBlock extends Component {
           <Link href={{
             pathname: "/category/",
             query: {
-              slug: dataEntry.slug
+              slug: dataEntry.slug ? dataEntry.slug : ''
             }
           }}
           as={{
-            pathname: "/category/" + dataEntry.slug
+            pathname: "/category/" + dataEntry.slug ? dataEntry.slug : ''
           }}>
             <a className={styles.NavLink}>
-              {dataEntry.name}
+              {dataEntry.name ? dataEntry.name : ''}
             </a>
           </Link>
         ))}
