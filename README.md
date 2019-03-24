@@ -3,7 +3,7 @@
 ---
 
 * Live demo: **https://reclean.blanik.me/**
-* Current version: **INDEV-20190318**
+* Current version: **INDEV-20190325**
 * Current state: (deep) **INDEV**
 * Author: **Amadeusz Blanik** <amadeusz@blanik.me> (https://blanik.me)
 * License: **GPL v3**
