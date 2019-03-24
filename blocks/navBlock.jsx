@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Link from "next/link";
 import styles from "../meSass/index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import api from "../api";
 
 export class NavBlock extends Component {
   constructor(props) {
@@ -9,14 +10,23 @@ export class NavBlock extends Component {
   }
 
   render() {
-    const sampleData = ["Another lipsum", "Lifestyle", "Technology", "Travel", "Uncategorized"];
+    const { menu } = this.props;
+    console.log({menu});
     return(
       <nav className={styles.NavBlock}>
         <div className={styles.Scroll}>
-        {sampleData.map(dataEntry => (
-          <Link href={dataEntry}>
+        {menu.map(dataEntry => (
+          <Link href={{
+            pathname: "/category/",
+            query: {
+              slug: dataEntry.slug
+            }
+          }}
+          as={{
+            pathname: "/category/" + dataEntry.slug
+          }}>
             <a className={styles.NavLink}>
-              {dataEntry}
+              {dataEntry.name}
             </a>
           </Link>
         ))}

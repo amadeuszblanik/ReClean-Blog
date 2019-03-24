@@ -5,6 +5,7 @@ import styles from "../meSass/index.scss";
 import Layout from "../layout/main";
 import api from "../api";
 import PostLink from "../blocks/postLink";
+import PageWrapper from "../components/PageWrapper";
 
 
 class Index extends React.Component {

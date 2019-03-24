@@ -84,7 +84,7 @@ export default class Header extends Component {
                 Reclean
               </Link>
             </div>
-            <NavBlock />
+            <NavBlock menu={this.props.menu} />
             <SearchBlock />
             <SocialBlock />
           </main>

@@ -5,6 +5,7 @@ import styles from "../meSass/index.scss";
 import Layout from "../layout/main";
 import api from "../api";
 import PostLink from "../blocks/postLink";
+import PageWrapper from "../components/PageWrapper";
 
 
 class Index extends React.Component {
@@ -17,15 +18,11 @@ class Index extends React.Component {
     return { posts }
   }
 
-  componentDidMount() {
-    const { posts } = this.props;
-  }
-
   render() {
-    const { posts } = this.props;
+    const { posts, mainMenu } = this.props;
 
     return (
-      <Layout>
+      <Layout mainMenu={mainMenu}>
         <section className={styles.WelcomeBlock}>
           <h2 className={styles.Title}>Reclean</h2>
           <h4 className={styles.Motto}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br/>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</h4>
@@ -42,7 +39,6 @@ class Index extends React.Component {
             }}
             linkAs={{
               pathname: '/post/' + post.slug,
-
             }}
             img={typeof post._embedded["wp:featuredmedia"] !== "undefined" ? post._embedded['wp:featuredmedia'][0].source_url : false}
             imgAlt={typeof post._embedded["wp:featuredmedia"] !== "undefined" ? post._embedded['wp:featuredmedia'][0].alt_text : false}
@@ -55,14 +51,9 @@ class Index extends React.Component {
             />
         ))}
         </section>
-        <ul className={styles.Sample}>
-          {/* Link href='/blog?id=last' as='/blog/last'>
-              <a>My last blog post</a>
-            </Link> */}
-        </ul>
       </Layout>
     )
   }
 }
 
-export default Index;
+export default PageWrapper(Index);

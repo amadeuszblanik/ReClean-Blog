@@ -5,8 +5,9 @@ import api from "../api";
 import FloatingHeader from "../blocks/floatingHeader";
 import styles from "../meSass/index.scss";
 import FacebookProvider, { Comments } from "react-facebook-sdk";
+import PageWrapper from "../components/PageWrapper";
 
-export default class extends React.Component {
+class Post extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -50,9 +51,9 @@ export default class extends React.Component {
   }
 
   render() {
-    const { post } = this.props;
+    const { post, mainMenu } = this.props;
     return (
-      <Layout>
+      <Layout mainMenu={mainMenu}>
         <article className={styles.post} ref={articleContent => {this.articleContent = articleContent;}}>
           <FloatingHeader progress={this.state.progress} title="ReCleanBlog" postTitle={post.title.rendered} location={this.props.location} />
           <header className={styles.header}>
@@ -82,3 +83,5 @@ export default class extends React.Component {
     )
   }
 }
+
+export default PageWrapper(Post);
