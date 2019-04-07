@@ -2,7 +2,7 @@
 ### React Server-Side Rendering App for Wordpress 5+ (REST-API)
 ---
 
-* Live demo: **https://reclean.blanik.me/**
+* Live demo: **https://reclean.heroku.com/**
 * Current version: **INDEV-20190325**
 * Current state: (deep) **INDEV**
 * Author: **Amadeusz Blanik** <amadeusz@blanik.me> (https://blanik.me)
