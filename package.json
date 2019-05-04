@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-starter",
+  "name": "reclean-blog",
   "version": "1.0.0",
   "scripts": {
     "next": "next -p 3000",
