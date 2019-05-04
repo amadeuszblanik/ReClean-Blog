@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../meSass/index.scss";
+import styles from "../styles/components/footer.scss";
 
 const Footer = () => (
     <footer className={styles.Footer}>

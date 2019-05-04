@@ -2,8 +2,8 @@ import React from "react";
 import Link from "next/link";
 import Layout from "../layout/main";
 import api from "../api";
-import FloatingHeader from "../blocks/floatingHeader";
-import styles from "../meSass/index.scss";
+import FloatingHeader from "../components/floatingHeader";
+import styles from "../styles/pages/post.scss";
 import FacebookProvider, { Comments } from "react-facebook-sdk";
 import PageWrapper from "../components/PageWrapper";
 

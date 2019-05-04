@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Link from "next/link";
-import fetch from "isomorphic-unfetch";
-import styles from "../meSass/index.scss";
+// import Link from "next/link";
+// import fetch from "isomorphic-unfetch";
+import styles from "../styles/pages/home.scss";
 import Layout from "../layout/main";
 import api from "../api";
-import PostLink from "../blocks/postLink";
+import PostLink from "../components/postLink";
 import PageWrapper from "../components/PageWrapper";
 
 

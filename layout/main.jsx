@@ -1,7 +1,8 @@
 import React, {Component} from "react";
 import Header from "./header";
 import Footer from "./footer";
-import styles from "../meSass/index.scss";
+import styles from "../styles/layouts/main.scss";
+import "../styles/typeface.scss";
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebookF, faLinkedinIn, faInstagram, faTwitter} from "@fortawesome/free-brands-svg-icons";

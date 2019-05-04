@@ -1,0 +1,22 @@
+@import "../react";
+
+.WelcomeBlock {
+  display: block;
+  max-width: inRem(800);
+  margin: inRem(100) auto inRem(72);
+  text-align: center;
+
+  .Title {
+    color: meColor(light);
+    background-image: linear-gradient(215deg, meColor(primary) 0%, meColor(secondary) 50%, meColor(third) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @include meTypeface(52, 700);
+    font-family: msTypeface(title);
+  }
+
+  .Motto {
+    @include meTypeface(16, 400);
+    line-height: 1.4;
+  }
+}

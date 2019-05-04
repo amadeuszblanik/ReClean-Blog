@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Link from "next/link";
 import Head from "next/head";
-import styles from "../meSass/index.scss";
+import styles from "../styles/components/header.scss";
 import api from "../api";
-import { NavBlock, SocialBlock } from "../blocks/navBlock";
+import { NavBlock, SocialBlock } from "../components/navBlock";
 
 api.menus = api.registerRoute('menus/v1', '/menus/(?P<id>[a-zA-Z(-]+)');
 
@@ -78,7 +78,7 @@ export default class Header extends Component {
             Please <a href="http://outdatedbrowser.com/en">update</a> it or turn on JavaScripts to better performance.
         </noscript>
         <header className={styles.Header}>
-          <main className={styles.mainApp}>
+          <main className={styles.container}>
             <div className={styles.HeaderLogo}>
               <Link href="/">
                 Reclean

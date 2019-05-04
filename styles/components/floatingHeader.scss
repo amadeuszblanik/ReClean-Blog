@@ -1,0 +1,88 @@
+@import "../react";
+
+.floatingHeader {
+  position: fixed;
+  top: -52px;
+  left: 0;
+  @include meFlex(center, left);
+  @include meWidthMax(100%);
+  margin: 0;
+  padding: 0;
+  color: meColor(dark);
+  background-color: meColor(light, 0.92);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  @include meMotion((top));
+  z-index: 8050;
+
+  &.isVisible {
+    top: 0;
+  }
+
+  .after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: block;
+    @include meWidthMax(0%);
+    height: 3px;
+    background-color: meColor(primary);
+    box-shadow: 4px 0 5px 1px meColor(primary);
+    @include meMotion((max-width, width), linear, 150ms);
+    z-index: -10;
+  }
+
+  .container {
+    @include meFlex(center, left);
+  }
+
+  .siteTitle,
+  .divider,
+  .postTitle {
+    padding: inRem(14) 0;
+  }
+
+  .siteTitle {
+    margin-left: inRem(24);
+    @include meTypeface(16, 700);
+  }
+
+  .divider {
+    margin: 0 inRem(8);
+  }
+
+  .postTitle {
+    font-style: italic;
+  }
+
+  .postShare {
+    @include meFlex;
+    margin-left: auto;
+    color: meColor(text);
+    @include meLinkHateCustom {
+      color: meColor(dark);
+    }
+
+    .label {
+      margin-right: inRem(6);
+    }
+
+    .shareLink {
+      @include meFlex;
+      min-width: 46px;
+      min-height: 46px;
+      color: meColor(light);
+      @include meSocialColorBackground;
+      cursor: pointer;
+    }
+  }
+
+  @include meBreakpoint(0, sm) {
+    .divider,
+    .postTitle,
+    .postShare {
+      display: none;
+    }
+  }
+}

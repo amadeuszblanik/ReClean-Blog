@@ -1,0 +1,73 @@
+@mixin meFlex($axisY: center, $axisX: center, $direction: row, $wrap: "null") {
+  $errMsgAxisY: "meSass Failed: Provided wrong axisY value. {top, center, bottom} -> You've provided: `#{$axisY}`.";
+  $errMsgAxisX: "meSass Failed: Provided wrong axisX value. {left, center, right} -> You've provided: `#{$axisX}`.";
+  $errMsgDirection: "meSass Failed: Provided wrong direction value. {row, column} -> You've provided: `#{$direction}`.";
+  $errMsgWrap: "meSass Failed: Provided wrong wrap value. {true, false} -> You've provided: `#{$wrap}`.";
+
+  display: flex;
+
+  @if ($direction == "row") {
+    @if ($axisY == "center") {
+      align-items: center;
+    } @else if ($axisY == "top") {
+      align-items: flex-start;
+    } @else if ($axisY == "bottom") {
+      align-items: flex-end;
+    } @else if ($axisY == "stretch") {
+      align-items: stretch;
+    } @else {
+      @error #{$errMsgAxisY};
+    }
+
+    @if ($axisX == "center") {
+      justify-content: center;
+    } @else if ($axisX == "left") {
+      justify-content: flex-start;
+    } @else if ($axisX == "right") {
+      justify-content: flex-end;
+    } @else if ($axisX == "stretch") {
+      justify-content: stretch;
+    } @else {
+      @error #{$errMsgAxisX};
+    }
+
+    flex-direction: row;
+  } @else if ($direction == "column") {
+    @if ($axisY == "center") {
+      justify-content: center;
+    } @else if ($axisY == "top") {
+      justify-content: flex-start;
+    } @else if ($axisY == "bottom") {
+      justify-content: flex-end;
+    } @else if ($axisY == "stretch") {
+      justify-content: stretch;
+    } @else {
+      @error #{$errMsgAxisY};
+    }
+
+    @if ($axisX == "center") {
+      align-items: center;
+    } @else if ($axisX == "left") {
+      align-items: flex-start;
+    } @else if ($axisX == "right") {
+      align-items: flex-end;
+    } @else if ($axisX == "stretch") {
+      align-items: stretch;
+    } @else {
+      @error #{$errMsgAxisX};
+    }
+
+    flex-direction: column;
+  } @else {
+    @error #{$errMsgDirection};
+  }
+
+  @if ($wrap == true) {
+    flex-wrap: wrap;
+  } @else if ($wrap == false) {
+    flex-wrap: nowrap;
+  } @else if ($wrap == "null") {
+  } @else {
+    @error #{$errMsgWrap};
+  }
+}

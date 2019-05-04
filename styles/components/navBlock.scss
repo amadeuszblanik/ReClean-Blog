@@ -1,0 +1,21 @@
+@import "../react";
+
+.NavBlock {
+  display: block;
+  overflow-x: scroll;
+  .Scroll {
+    @include meFlex;
+    max-width: fit-content;
+    width: fit-content;
+  }
+  .NavLink {
+    display: block;
+    @include mePY(inRem(16));
+    @include meMX(inRem(8));
+    @include meTypeface(16, 400);
+    font-family: msTypeface(title);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+}

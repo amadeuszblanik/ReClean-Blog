@@ -1,0 +1,16 @@
+@mixin meGrid {
+  @warn "This function may change in further version of meSass(), but I need much more time for that.";
+
+  display: grid;
+  @each $breakpoint, $value in $ms-grid {
+    @include meBreakpoint($breakpoint){
+      grid-template-columns: repeat(#{$value}, 1fr);
+    }
+  }
+
+  @each $breakpoint, $value in $ms-grid-gap {
+    @include meBreakpoint($breakpoint){
+      grid-gap: $value;
+    }
+  }
+}

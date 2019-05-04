@@ -1,0 +1,22 @@
+/*!
+  Project name: ReClean-Blog
+  Author: Amadeusz Blanik (https://blanik.me)
+
+  &copy; 2019 May
+*/
+
+@warn "ReClean() :: Start…";
+
+@import "base/index";
+@import "vendors/index";
+
+@import "config/index";
+@import "function/index";
+@import "mixins/index";
+
+@import "utilities/index";
+@import "layouts/index";
+@import "components/index";
+@import "pages/index";
+
+@warn "ReClean() :: Successfully compiled…";
