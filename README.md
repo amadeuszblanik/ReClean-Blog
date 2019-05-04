@@ -1,9 +1,9 @@
-# ReClean-Blog
+# ReClean 2.0
 ### React Server-Side Rendering App for Wordpress 5+ (REST-API)
 ---
 
 * Live demo: **https://reclean.herokuapp.com/**
-* Current version: **INDEV-20190325**
+* Current version: **2.0-indev**
 * Current state: (deep) **INDEV**
 * Author: **Amadeusz Blanik** <amadeusz@blanik.me> (https://blanik.me)
 * License: **GPL v3**
