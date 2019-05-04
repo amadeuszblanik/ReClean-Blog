@@ -1,0 +1,146 @@
+@import "../react";
+
+.PostGrid {
+  @include meGrid;
+
+  .PostItem {
+    @include meFlex(top, left, column);
+    grid-column: span 4;
+    border-radius: 0.5rem;
+    box-shadow: 0px 3px 11px 0px meColor(dark, 0.3);
+    overflow: hidden;
+
+    .PostItemLink {
+      @include meFlex(top, left, column);
+      @include meLink(meColor(textLight), none, meColor(text), none);
+    }
+
+    .thumbnail {
+      position: relative;
+      width: 100%;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+
+      &:before {
+        content: "";
+        position: relative;
+        display: inline-block;
+        padding-bottom: 46.6%;
+      }
+
+      & > img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        display: block;
+        max-width: 100%;
+        height: auto;
+
+        transform: translate(-50%, -50%);
+      }
+
+
+    }
+
+    .content {
+      padding: 1rem 16px;
+
+      .category {
+        display: block;
+        @include meWidthMax(100%);
+        margin-bottom: 0.75rem;
+        @include meTypeface(14, 500);
+        text-transform: uppercase;
+      }
+
+      .title {
+        display: block;
+        @include meWidthMax(100%);
+        margin-bottom: 0.45rem;
+        @include meTypeface(22, 600);
+        line-height: 1.2;
+        letter-spacing: 0.5px;
+      }
+
+      .excerpt {
+        display: block;
+        @include meWidthMax(100%);
+        margin-bottom: 0.65rem;
+        @include meTypeface(16, 400);
+        line-height: 1.2;
+        font-style: italic;
+      }
+
+      .author {
+        @include meFlex(center, left);
+        @include meWidthMax(100%);
+        margin-bottom: 1rem;
+        @include meTypeface(14, 500);
+
+        .name {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+
+
+    &:nth-child(9n - 8) {
+      .thumbnail {
+        margin-bottom: 0rem;
+      }
+
+      .content {
+        .author {
+          margin-bottom: 0rem;
+        }
+      }
+    }
+
+    &:nth-child(9n - 8) {
+      flex-direction: row;
+      align-items: center;
+
+      .PostItemLink {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .thumbnail {
+        @include meWidthMax(66.67%);
+      }
+
+      .content {
+        @include meWidthMax(33.33%);
+      }
+    }
+  }
+
+  @include meBreakpoint(md) {
+    .PostItem {
+      .content {
+        padding: 1rem 24px;
+      }
+    }
+  }
+
+  @include meBreakpoint(md, xl) {
+    .PostItem {
+      &:nth-child(3n - 2) {
+        grid-column: span 8;
+      }
+    }
+  }
+
+  @include meBreakpoint(xl) {
+    .PostItem {
+      &:nth-child(9n - 8) {
+        grid-column: span 12;
+      }
+
+      &:nth-child(9n - 4), &:nth-child(9n - 3) {
+        grid-column: span 6;
+      }
+    }
+  }
+}
