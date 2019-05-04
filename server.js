@@ -28,20 +28,6 @@ app.prepare().then(() => {
     //return ssrCache({ req, res, pagePath, queryParams })
   })
 
-  server.get('/category/:catId', (req, res) => {
-    //const queryParams = { slug: req.params.slug }
-    //const pagePath = '/post'
-    app.render(req, res, '/category', req.params)
-    //return ssrCache({ req, res, pagePath, queryParams })
-  })
-
-  server.get('/search/:query', (req, res) => {
-    //const queryParams = { slug: req.params.slug }
-    //const pagePath = '/post'
-    app.render(req, res, '/search', req.params)
-    //return ssrCache({ req, res, pagePath, queryParams })
-  })
-
   server.get('*', (req, res) => handle(req, res))
 
   server.listen(port, err => {

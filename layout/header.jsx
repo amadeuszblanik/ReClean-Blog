@@ -1,94 +1,53 @@
 import React, { Component } from "react";
-import Link from "next/link";
 import Head from "next/head";
-import styles from "../styles/components/header.scss";
-import api from "../api";
-import { NavBlock, SocialBlock } from "../components/navBlock";
+import Link from "next/link";
+import styles from "../styles/layouts/header.scss";
+import Navigation from "../components/navigation";
+import Search from "../components/search";
+import Social from "../components/social";
 
-api.menus = api.registerRoute('menus/v1', '/menus/(?P<id>[a-zA-Z(-]+)');
-
-class SearchBlock extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      value: ""
-    }
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    event.preventDefault();
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    //alert('A name was submitted: ' + this.state.value);
-    if(window && window.location && window.location.pathname) {
-      window.location.pathname = "/search/" + this.state.value;
-    }
-  }
-
-  render() {
-    return(
-      <form onSubmit={this.handleSubmit} className={styles.HeaderSearch}>
-        <input 
-          name="query"
-          type="text"
-          className={styles.SearchInput}
-          placeholder="What are you looking for?"
-          value={this.state.value}
-          onChange={this.handleChange}
-        />
-        <button className={styles.SearchSubmit} type="submit">
-          Search
-        </button>
-      </form>
-    )
-  }
-}
-
-
-export default class Header extends Component {
+class Header extends Component {
   constructor(props, req) {
     super(props);
   }
-
   render() {
     return (
       <div>
         <Head>
-          <title>Reclean Blog — Made with love by Blanik.me</title>
+          <meta charset="UTF-8" />
+          <meta name="description" content="" />
+          <meta name="keywords" content="" />
+          <meta name="author" content="Amadeusz David Blanik" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-          <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
-          <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png" />
-          <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
-          <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png" />
-          {/*<link rel="manifest" href="/static/site.webmanifest" />*/}
-          <link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#b5418e" />
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
-          <meta name="msapplication-TileColor" content="#2b5797" />
-          <meta name="theme-color" content="#ffffff" />
+
+          <title>ReClean-Blog</title>
+
+          <link rel="apple-touch-icon" sizes="180x180" href="/static/app/apple-touch-icon.png" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/static/fapp/avicon-32x32.png" />
+          <link rel="icon" type="image/x-icon" href="/static/app/favicon.ico" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/static/app/favicon-16x16.png" />
+          <link rel="manifest" href="/static/app/site.webmanifest" />
+          <link rel="mask-icon" href="/static/app/safari-pinned-tab.svg" color="#b5418e" />
+          <meta name="apple-mobile-web-app-title" content="Blanik.me" />
+          <meta name="application-name" content="Blanik.me" />
+          <meta name="msapplication-TileColor" content="#0e0d0d" />
+          <meta name="theme-color" content="#0e0d0d" />
         </Head>
-        <noscript>
-            It's seems like your browser is a bit outdated.<br />
-            Please <a href="http://outdatedbrowser.com/en">update</a> it or turn on JavaScripts to better performance.
-        </noscript>
-        <header className={styles.Header}>
-          <main className={styles.container}>
-            <div className={styles.HeaderLogo}>
-              <Link href="/">
-                Reclean
-              </Link>
-            </div>
-            <NavBlock menu={this.props.menu} />
-            <SearchBlock />
-            <SocialBlock />
-          </main>
+        <header className={styles.pageHeader}>
+          <div className={styles.container}>
+            <Link href="/" as="/">
+              <a className={styles.branding}>
+                <h2><i>Re</i></h2>
+              </a>
+            </Link>
+            <Navigation />
+            <Search />
+            <Social />
+          </div>
         </header>
-      </div>);
+      </div>
+    )
   }
 }
+
+export default Header;

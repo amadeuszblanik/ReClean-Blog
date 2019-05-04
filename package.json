@@ -1,19 +1,14 @@
 {
   "name": "reclean-blog",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "scripts": {
     "next": "next -p 3000",
-    "dev": "NODE_ENV=development node server.js",
+    "dev": "next -p 8080",
+    "dev-server": "NODE_ENV=development node server.js",
     "build": "next build",
-    "gcp-build": "next build",
-    "heroku-postbuild": "npm run build",
     "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.17",
-    "@fortawesome/free-brands-svg-icons": "^5.8.1",
-    "@fortawesome/free-solid-svg-icons": "^5.8.1",
-    "@fortawesome/react-fontawesome": "^0.1.4",
     "@zeit/next-sass": "^1.0.1",
     "cacheable-response": "^1.5.2",
     "classnames": "^2.2.6",
@@ -24,7 +19,6 @@
     "normalize-scss": "^7.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-facebook-sdk": "^1.1.1",
     "svg-react-loader": "^0.4.6",
     "wpapi": "^1.2.1"
   },
