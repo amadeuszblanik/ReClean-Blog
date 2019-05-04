@@ -1,0 +1,16 @@
+@import "../react";
+
+.navigation {
+  //max-width: 60%;
+  margin: 0 auto 0 1rem;
+  overflow-x: scroll;
+  .scroll {
+    @include meFlex(center, left);
+    height: 70px;
+    .navLink {
+      @include meLink(meColor(text), none, meColor(text), none);
+      white-space: nowrap;
+      margin: 0 16px;
+    }
+  }
+}

@@ -1,11 +1,11 @@
 /*!
-  Project name: ReClean-Blog
+  Project name: meSass-alpha
   Author: Amadeusz Blanik (https://blanik.me)
 
   &copy; 2019 May
 */
 
-@warn "ReClean() :: Start…";
+@warn "meSass() :: Start…";
 
 @import "base/index";
 @import "vendors/index";
@@ -19,4 +19,22 @@
 @import "components/index";
 @import "pages/index";
 
-@warn "ReClean() :: Successfully compiled…";
+@include reset();
+
+body {
+
+  padding: 0;
+  margin: 0;
+
+  color: meColor(text);
+  background-color: meColor(light);
+
+  font-family: msTypeface(default);
+  font-size: 16px;
+}
+
+a {
+  @include meLink(meColor(text), underline, meColor(primary), underline);
+}
+
+@warn "meSass() :: Successfully compiled…";

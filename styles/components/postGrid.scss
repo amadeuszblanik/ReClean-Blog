@@ -1,7 +1,0 @@
-@import "../react";
-
-.PostGrid {
-  display: grid;
-  @include meGrid;
-  margin-bottom: inRem(80);
-}

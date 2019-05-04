@@ -11,7 +11,7 @@
     width: calc(100% - 48px);
   }
   @include meBreakpoint(xl) {
-    max-width: 1430px;
+    max-width: 1130px;
     width: 90vw;
     margin: 0 auto;
   }

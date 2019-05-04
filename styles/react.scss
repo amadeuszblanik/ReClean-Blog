@@ -3,10 +3,3 @@
 @import "config/index";
 @import "function/index";
 @import "mixins/index";
-
-.container {
-  @include meBreakpoint(xl) {
-    @include meWidthMax(1140px);
-    margin: 0 auto;
-  }
-}

@@ -1,0 +1,23 @@
+@import "../react";
+
+.pageHeader {
+  position: relative;
+
+  height: 70px;
+
+  .container {
+    @include meFlex(center, left);
+    max-width: 1300px;
+    width: 95%;
+    height: 70px;
+    margin: 0 auto;
+  }
+
+  .branding {
+    @include meTypeface(18, 700);
+    @include meLink(meColor(primary), none, meColor(primary), none);
+    i {
+      font-style: italic;
+    }
+  }
+}
