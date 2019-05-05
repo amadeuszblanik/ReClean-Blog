@@ -1,0 +1,54 @@
+@import "../react";
+
+.blogpostHeader {
+  @include meFlex;
+  @include meWidthMax(100%);
+  min-height: 30vh;
+  .article {
+    @include meWidthMax(100%);
+    text-align: center;
+    letter-spacing: 0.5px;
+    .containerArticle {
+      max-width: 500px;
+      width: 95%;
+      margin: 0 auto;
+    }
+    .pageDescription {
+      margin: 5rem 0 0.75rem;
+      span {
+        margin: 0 0.45rem;
+      }
+    }
+    .pageTitle {
+      @include meTypeface(32, 700);
+      i {
+        font-weight: 600;
+        font-style: italic;
+      }
+    }
+    .coverPhoto {
+      position: relative;
+      display: block;
+      width: 100%;
+      margin: 5rem 0  7rem;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      &:before {
+        content: "";
+        position: relative;
+        display: block;
+        padding-bottom: 45%;
+      }
+
+      & > img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 100%;
+        height: auto;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}

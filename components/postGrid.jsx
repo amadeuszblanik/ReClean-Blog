@@ -16,7 +16,7 @@ export default class PostGrid extends React.Component {
         let data = {
             id: dataEntry.id,
             slug: dataEntry.slug,
-            href: "/post?id=" + dataEntry.id,
+            href: "/post?slug=" + dataEntry.slug,
             as: "/post/" + dataEntry.slug,
             date: dataEntry.date,
             title: dataEntry.title.rendered,
@@ -28,7 +28,7 @@ export default class PostGrid extends React.Component {
         }
         return (
             <article className={styles.PostItem}>
-                <Link href={data.href}>
+                <Link href={data.href} as={data.as}>
                     <a className={styles.PostItemLink}>
                         <figure className={styles.thumbnail}>
                             <img src={data.thumbnail} alt={data.thumbnailAlt}/>

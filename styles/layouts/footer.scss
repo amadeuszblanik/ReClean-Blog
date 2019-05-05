@@ -1,0 +1,16 @@
+@import "../react";
+
+.pageFooter {
+  @import "../utilities/container";
+  padding: 2rem 0;
+  background: meColor(main);
+  text-align: center;
+  p, a {
+    padding-bottom: 0.35rem;
+    @include meMotion(color);
+    @include meLink(meColor(textLight), none, meColor(text), none);
+  }
+  a {
+    margin-left: 0.5rem;
+  }
+}

@@ -1,0 +1,33 @@
+@mixin meTinymce {
+  h1 {
+    @include meTypeface(24, 500);
+  }
+  h2 {
+    @include meTypeface(22, 500);
+  }
+  h3 {
+    @include meTypeface(20, 500);
+  }
+  h4 {
+    @include meTypeface(18, 500);
+  }
+  h5 {
+    @include meTypeface(16, 500);
+  }
+  h6 {
+    @include meTypeface(14, 500);
+  }
+  b, strong {
+    font-weight: 700;
+  }
+  i {
+    font-style: italic;
+  }
+  p {
+    margin-bottom: 0.45rem;
+  }
+  hr {
+    border: none;
+    border-bottom: 1px solid meColor(textLight);
+  }
+}

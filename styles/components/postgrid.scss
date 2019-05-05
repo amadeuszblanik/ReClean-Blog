@@ -2,6 +2,7 @@
 
 .PostGrid {
   @include meGrid;
+  margin-bottom: 2rem;
 
   .PostItem {
     @include meFlex(top, left, column);
@@ -96,24 +97,6 @@
         }
       }
     }
-
-    &:nth-child(9n - 8) {
-      flex-direction: row;
-      align-items: center;
-
-      .PostItemLink {
-        flex-direction: row;
-        align-items: center;
-      }
-
-      .thumbnail {
-        @include meWidthMax(66.67%);
-      }
-
-      .content {
-        @include meWidthMax(33.33%);
-      }
-    }
   }
 
   @include meBreakpoint(md) {
@@ -140,6 +123,24 @@
 
       &:nth-child(9n - 4), &:nth-child(9n - 3) {
         grid-column: span 6;
+      }
+
+      &:nth-child(9n - 8) {
+        flex-direction: row;
+        align-items: center;
+
+        .PostItemLink {
+          flex-direction: row;
+          align-items: center;
+        }
+
+        .thumbnail {
+          @include meWidthMax(66.67%);
+        }
+
+        .content {
+          @include meWidthMax(33.33%);
+        }
       }
     }
   }

@@ -3,11 +3,11 @@
 .welcome {
   @include meFlex;
   @include meWidthMax(100%);
-  height: 30vh;
+  min-height: 30vh;
   .article {
     text-align: center;
     letter-spacing: 0.5px;
-    h2 {
+    .pageTitle {
       @include meTypeface(32, 700);
       margin-bottom: 0.75rem;
       i {
@@ -15,7 +15,7 @@
         font-style: italic;
       }
     }
-    p {
+    .pageDescription {
       line-height: 1.2;
     }
   }
