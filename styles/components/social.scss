@@ -1,0 +1,17 @@
+@import "../react";
+
+.social {
+  .navigation {
+    @include meFlex;
+    .navItem {
+      min-width: 18px;
+      min-height: 18px;
+      margin: 0 5px;
+      padding: 4px 4px;
+      & > svg {
+        width: auto;
+        height: 18px;
+      }
+    }
+  }
+}
