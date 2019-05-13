@@ -1,4 +1,30 @@
-.Search {
-  max-width: 20%;
+@import "../react";
 
+.search {
+  @include meFlex;
+  max-width: 20%;
+  .searchForm {
+    @include meFlex;
+    input {
+      color: meColor(textLight);
+      border: none;
+      border-radius: 0;
+      border-bottom: solid 1px meColor(textLight);
+      background: transparent;
+      -webkit-appearance: none;
+      @include meMotion((border, border-bottom));
+      &:focus, &:active {
+        border-bottom: solid 1px meColor(text);
+      }
+    }
+  }
+  .buttonSubmit {
+    @include meResetButton;
+    min-width: 18px;
+    min-height: 18px;
+    & > svg {
+      width: auto;
+      height: 18px;
+    }
+  }
 }
