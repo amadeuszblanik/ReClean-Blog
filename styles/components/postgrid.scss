@@ -9,6 +9,8 @@
     grid-column: span 4;
     border-radius: 0.5rem;
     box-shadow: 0px 3px 11px 0px meColor(dark, 0.3);
+    transform: translate(0, 0);
+    @include meMotion((box-shadow, transform));
     overflow: hidden;
 
     .PostItemLink {
@@ -60,6 +62,7 @@
         @include meWidthMax(100%);
         margin-bottom: 0.45rem;
         @include meTypeface(22, 600);
+        font-family: msTypeface(header);
         line-height: 1.2;
         letter-spacing: 0.5px;
       }
@@ -141,6 +144,11 @@
         .content {
           @include meWidthMax(33.33%);
         }
+      }
+
+      @include meLinkHateCustom {
+        box-shadow: 0px 5px 21px 6px rgba(20, 23, 26, 0.3);
+        transform: translate(0, -5px);
       }
     }
   }

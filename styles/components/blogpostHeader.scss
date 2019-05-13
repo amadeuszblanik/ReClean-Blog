@@ -21,6 +21,7 @@
     }
     .pageTitle {
       @include meTypeface(32, 700);
+      font-family: msTypeface(header);
       i {
         font-weight: 600;
         font-style: italic;

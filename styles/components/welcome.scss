@@ -9,6 +9,7 @@
     letter-spacing: 0.5px;
     .pageTitle {
       @include meTypeface(32, 700);
+      font-family: msTypeface(header);
       margin-bottom: 0.75rem;
       i {
         font-weight: 600;

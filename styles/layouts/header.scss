@@ -5,6 +5,8 @@
 
   height: 70px;
 
+  font-family: msTypeface(header);
+
   .container {
     @include meFlex(center, left);
     max-width: 1300px;

@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Bitter:400,400i,700');
+
 $ms-typeface:(
         base-font-size: 16,
         base-font-weight: 400,
         default: #{-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"},
-        mono: #{"SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace},
+        header: #{"Bitter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"}
 );
